@@ -59,19 +59,30 @@ var requiredError = "This field is required";
 				return true;
 			else
 			{
-				v._error = requiredError;
+				v.error = requiredError;
 				return v;
 			}
 			
 
 		}
 
-	function myValidator(field)
+	function myValidator(field,required)
 	{
 		var vtype = field.attr('vtype');
 		var _result;
 		var _error;
 		var valid = {}
+		var req_error;
+
+		if(required && required == "on"){
+			var v = validateRequired(field);
+		
+		if(v.error)
+			 req_error = requiredError;
+			
+	 }
+
+
 		switch(vtype)
 		{
 			case "numberonly": _result = validateNumberOnly(field);
@@ -93,6 +104,7 @@ var requiredError = "This field is required";
 
 		valid.result = _result;
 		valid.error = _error;
+		valid.required = req_error;
 
 		return valid;
 
@@ -119,29 +131,29 @@ $(document).ready(function(){
 			var currentform = $(this).parents('form:first');
 			var className = '.validate-error-'+nameField;
 
-			if(req && req == "on"){
-			var valid = validateRequired($(this));
+			// if(req && req == "on"){
+			// var valid = validateRequired($(this));
 
 
-			if(valid._error)
+			// if(valid._error)
+			// {
+			// 	currentform.find(className).html(valid._error);
+			// 	//e.preventDefault();
+			// 	errorObj.push(_error);
+			// }
+			// else
+			// 	currentform.find(className).html("");
+
+			// }
+
+			// else{
+
+			var v = myValidator($(this),req);
+
+			if((v.error && (v.error != ""))|| v.required)
 			{
-				currentform.find(className).html(valid._error);
-				//e.preventDefault();
-				errorObj.push(_error);
-			}
-			else
-				currentform.find(className).html("");
-
-			}
-			
-			else{
-
-			var v = myValidator($(this));
-
-			if(v.error && (v.error != ""))
-			{
-			
-			var error = v.error;
+		
+			var error = v.required ? v.required : v.error;
 
 			currentform.find(className).html(error);
 
@@ -154,7 +166,7 @@ $(document).ready(function(){
 
 			}
 
-		}
+		//}
 	});
 	
 		console.log(errorObj)
