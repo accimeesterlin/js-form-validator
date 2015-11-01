@@ -14,9 +14,6 @@ var requiredError = "This field is required";
 				return false
 			else
 				return true;
-			
-
-
 		}
 
 	function validateStringOnly(field)
@@ -50,7 +47,6 @@ var requiredError = "This field is required";
 
 		}
 
-
 	function validateRequired(field)
 		{
 			var v = {}
@@ -62,8 +58,6 @@ var requiredError = "This field is required";
 				v.error = requiredError;
 				return v;
 			}
-			
-
 		}
 
 	function myValidator(field,required)
@@ -81,7 +75,6 @@ var requiredError = "This field is required";
 			 req_error = requiredError;
 			
 	 }
-
 
 		switch(vtype)
 		{
