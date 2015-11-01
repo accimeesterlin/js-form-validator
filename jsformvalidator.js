@@ -54,6 +54,10 @@ var requiredError = "This field is required";
 	function validateRequired(field)
 		{
 			var value = field.val();
+			if(!value)
+				return false;
+			else
+				return true;
 			
 
 		}
@@ -97,11 +101,11 @@ $(document).ready(function(){
 
 	$('.validate-this-form').each(function(){
 		var validationtype = $(this).attr('vtype');
-		$(this).find('input').each(function(){
-			//alert($(this).attr('name'));
-			
+		$(this).find('input').each(function(){		
 			var v = myValidator($(this));
-			console.log("v====>",v)
+			if(v.error && (v.error != ""))
+				alert(v.error)
+
 
 		});
 	});
