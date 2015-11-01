@@ -109,7 +109,8 @@ $(document).ready(function(){
 		var validationtype = $(this).attr('vtype');
 		var errorObj = [];
 
-		$(this).find('input').each(function(){	
+		$(this).find('input').each(function(){
+
 			var nameField = $(this).attr('name');
 
 			//check if field is required
@@ -118,16 +119,18 @@ $(document).ready(function(){
 			var currentform = $(this).parents('form:first');
 			var className = '.validate-error-'+nameField;
 
-			if(req && req == "on")
+			if(req && req == "on"){
 			var v = validateRequired($(this));
 			if(v._error)
 			{
 				currentform.find(className).html(v._error);
 				errorObj.push(_error);
 			}
+			}
 			else{
 
 			var v = myValidator($(this));
+
 			if(v.error && (v.error != ""))
 			{
 			
@@ -145,8 +148,8 @@ $(document).ready(function(){
 			}
 
 		});
-
-	}
+	});
+	
 		console.log(errorObj)
 
 		if(errorObj.length > 0)
