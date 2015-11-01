@@ -33,9 +33,9 @@ To use on a form you want to validate.
 Attach the class "validate-this-form" to your form.
 If you require a field add the attribute ``` vrequired="on" ``` to the field tag.
 To validate for email,number and url, add the attribute 
-```vtype="emailonly"<br/>
-vtype="numberonly"<br/>
-vtype="urlonly"<br/>
+```vtype="emailonly"
+vtype="numberonly"
+vtype="urlonly"
 ```
 
 
