@@ -13,13 +13,20 @@ jQuery Library
 
 How to use
 ==========
-Include the jQuery Library in your code.<br/>
+Download and Include the jQuery Library from jQuery.com in your code.<br/>
 Include the jsformvalidator after your jQuery file <br/>
 E.g 
 
 ```
 <script src="jquery.1.9.1.min.js"></script>
 <script src="jsformvalidator.js"></script>
+```
+or Include jQuery from a CDN
+
+```
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="jsformvalidator.js"></script>
+
 ```
 
 
