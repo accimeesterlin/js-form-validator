@@ -68,8 +68,9 @@ validate-error-{fieldname}, wherever you want to appear inside the form tag. E.g
 Enjoy.
 
 Future Additions
-1) Using a vtype="require-all" attribute on the main form tag to automatically make all fields required.
-2) Password validation. (weak password,confirm password...)
+=================
+- Using a vtype="require-all" attribute on the main form tag to automatically make all fields required.
+- Password validation. (weak password,confirm password...)
 
 
 
