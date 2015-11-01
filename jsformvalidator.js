@@ -1,6 +1,7 @@
 
-var numberOnlyError = "Numbers Only required";
-var stringOnlyError = "String Only required";
+var numberOnlyError = "Must be a number!";
+var stringOnlyError = "Must be letters only";
+var emailOnlyError = "Please enter a valid email"
 
 	function validateNumberOnly(field)
 		{
