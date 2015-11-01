@@ -101,13 +101,23 @@ $(document).ready(function(){
 
 	$('.validate-this-form').each(function(){
 		var validationtype = $(this).attr('vtype');
-		$(this).find('input').each(function(){		
+		$(this).find('input').each(function(){	
+			var nameField = $(this).attr('name');	
 			var v = myValidator($(this));
 			if(v.error && (v.error != ""))
-				alert(v.error)
-
+			{
+				var error = v.error;
+			
+			var currentform = $(this).parents('form:first');
+			var className = '.validate-error-'+nameField;
+			console.log("====",className);
+			currentform.find(className).html(error);
+			//n.html(error);
+			//console.log("Has ERROR:",n)
+		}
 
 		});
+		
 	});
 	
 });

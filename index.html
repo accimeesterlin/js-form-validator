@@ -10,15 +10,23 @@
 //validate for all input fields
 //make it easy to use
 //validate for required fields individual
-//as a shortcut, putting require all on the form, automatically makes sure the form elemests are all validated for input
+//as a shortcut, putting require all on the form, automatically makes sure the form elements are all validated for input
 
 </script>
 <h4>Form 1</h4>
 <form action="#" class="validate-this-form" vtype="requireall">
-<input type="text" name="xx1" > <br/><br/>
-<input type="text" name="xx1" > <br/><br/>
-<input type="text" name="xx1" > <br/><br/>
-<input type="text" name="xx1" > <br/><br/>
+<input type="text" name="xx1" value="a name" vtype="numberonly"> 
+<span class="validate-error-xx1"> </span>
+<br/><br/>
+<input type="text" name="xx6" value="123456" vtype="numberonly"> 
+<span class="validate-error-xx6"> </span>
+<br/><br/>
+<input type="text" name="xx7" value="123456" vtype="stringonly"> 
+<span class="validate-error-xx7"> </span>
+<br/><br/>
+<input type="text" name="xx8" value="abcdefgy@gmail.co" vtype="urlonly"> 
+<span class="validate-error-xx8"> </span>
+<br/><br/>
 	
 <input type="submit" name="submit1" >
 
@@ -27,10 +35,18 @@
 
 <h4>Form 2</h4>
 <form action="#" class="validate-this-form" vtype="requiresome">
-<input type="text" name="xx2" value="a name" vtype="numberonly" vrequired="on"> <br/><br/>
-<input type="text" name="xx2" value="87888" vtype="stringonly" vrequired="on"> <br/><br/>
-<input type="text" name="xx2" value="a something"  vtype="emailonly"> <br/><br/>
-<input type="text" name="xx2" value="Yes ooo" vtype="urlonly"> <br/><br/>
+<input type="text" name="xx2" value="a name" vtype="numberonly" vrequired="on">
+<span class="validate-error-xx2"> </span>
+<br/><br/>
+<input type="text" name="xx3" value="87888kjjkjkjkkj" vtype="numberonly" vrequired="on"> 
+<span class="validate-error-xx3"> </span>
+<br/><br/>
+<input type="text" name="xx4" value="a something"  vtype="emailonly"> 
+<span class="validate-error-xx4"> </span>
+<br/><br/>
+<input type="text" name="xx5" value="Yes ooo" vtype="urlonly"> 
+<span class="validate-error-xx5"> </span>
+<br/><br/>
 	
 <input type="submit" name="submit2" >
 
