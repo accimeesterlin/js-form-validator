@@ -57,6 +57,18 @@ A sample form to be validated is:
 <input type="submit" name="submit" >
 </form>
 ```
+Finally, to show the error messages per field, just add an element with class
+validate-error-{fieldname}, wherever you want to appear inside the form tag. E.g 
+
+```
+<input type="text" name="phone" vtype="numberonly" vrequired="on">
+<span class="validate-error-phone"></span>
+```
+Enjoy.
+
+Future Additions
+1) Using a vtype="require-all" attribute on the main form tag to automatically make all fields required.
+2) Password validation. (weak password,confirm password...)
 
 
 
