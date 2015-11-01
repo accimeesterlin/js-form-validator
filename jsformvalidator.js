@@ -8,7 +8,11 @@ var requiredError = "This field is required";
 	function validateNumberOnly(field)
 		{
 			var value = field.val();
-			if(value)
+			if(isNaN(value))
+				return false
+			else
+				return true;
+			
 
 
 		}
@@ -25,18 +29,26 @@ var requiredError = "This field is required";
 	function validateEmailOnly(field)
 		{
 			var value = field.val();
-			if(value)
+		
 
 		}
+
+	function validateUrlOnly(field)
+		{
+			var value = field.val();
+		
+
+		}
+
 
 	function validateRequired(field)
 		{
 			var value = field.val();
-			if(value)
+			
 
 		}
 
-	function myValidator()
+	function myValidator(field)
 	{
 		var vtype = field.attr('vtype');
 		var _result;
@@ -45,10 +57,16 @@ var requiredError = "This field is required";
 		switch(vtype)
 		{
 			case "numberonly": _result = validateNumberOnly(field);
-								_error = numberOnlyError;
+								_error = _result ? "" : numberOnlyError;
 			break;
 			case "stringonly": _result = validateStringOnly(field);
-								_error = stringOnlyError;
+								_error = _result ? "" : stringOnlyError;
+			break;
+			case "emailonly": _result = validateEmailOnly(field);
+							  _error = _result ? "" :emailOnlyError
+			break;
+			case "urlonly": _result = validateUrlOnly(field);
+							  _error = _result ? "" :urlOnlyError
 			break;
 			default:
 			break
@@ -72,7 +90,8 @@ $(document).ready(function(){
 		$(this).find('input').each(function(){
 			alert($(this).attr('name'));
 			
-			validateNumberOnly($(this));
+			var v = myValidator($(this));
+			console.log("v====>",v)
 
 		});
 	});
