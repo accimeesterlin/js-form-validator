@@ -1,7 +1,9 @@
 
 var numberOnlyError = "Must be a number!";
 var stringOnlyError = "Must be letters only";
-var emailOnlyError = "Please enter a valid email"
+var emailOnlyError = "Please enter a valid email";
+var urlOnlyError = "Please enter a valid URL";
+var requiredError = "This field is required";
 
 	function validateNumberOnly(field)
 		{
@@ -18,8 +20,6 @@ var emailOnlyError = "Please enter a valid email"
 				return true;
 				else
 				return false;
-
-
 		}
 
 	function validateEmailOnly(field)
@@ -39,15 +39,28 @@ var emailOnlyError = "Please enter a valid email"
 	function myValidator()
 	{
 		var vtype = field.attr('vtype');
-		var result;
+		var _result;
+		var _error;
+		var valid = {}
 		switch(vtype)
 		{
-			case "numberonly": result = validateNumberOnly(field);
-								error = ''
+			case "numberonly": _result = validateNumberOnly(field);
+								_error = numberOnlyError;
 			break;
-			case "stringonly": result = validateStringOnly(field);
+			case "stringonly": _result = validateStringOnly(field);
+								_error = stringOnlyError;
+			break;
+			default:
+			break
 
 		}
+
+		valid.result = _result;
+		valid.error = _error;
+
+		return valid;
+
+
 	}
 
 
