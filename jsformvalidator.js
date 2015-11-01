@@ -120,19 +120,20 @@ $(document).ready(function(){
 			var className = '.validate-error-'+nameField;
 
 			if(req && req == "on"){
-			var v = validateRequired($(this));
+			var valid = validateRequired($(this));
 
 
-			if(v._error)
+			if(valid._error)
 			{
-				currentform.find(className).html(v._error);
-				e.preventDefault();
+				currentform.find(className).html(valid._error);
+				//e.preventDefault();
 				errorObj.push(_error);
 			}
 			else
 				currentform.find(className).html("");
 
 			}
+			
 			else{
 
 			var v = myValidator($(this));
