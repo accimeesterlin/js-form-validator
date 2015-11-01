@@ -14,19 +14,28 @@ jQuery Library
 How to use
 ==========
 Download and Include the jQuery Library from jQuery.com in your code.<br/>
-Include the jsformvalidator after your jQuery file <br/>
+Download jsformvalidator (fork or download as zip)
+Include the jsformvalidator after your jQuery library link <br/>
 E.g 
 
 ```
 <script src="jquery.1.9.1.min.js"></script>
 <script src="jsformvalidator.js"></script>
 ```
-or Include jQuery from a CDN
+or Include jQuery from a CDN, before adding the jsformvalidator.js
 
 ```
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script src="jsformvalidator.js"></script>
 
+```
+To use on a form you want to validate.
+Attach the class "validate-this-form" to your form.
+If you require a field add the attribute ``` vrequired="on" ``` to the field tag.
+To validate for email,number and url, add the attribute 
+```vtype="emailonly"<br/>
+vtype="numberonly"<br/>
+vtype="urlonly"<br/>
 ```
 
 
