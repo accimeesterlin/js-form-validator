@@ -31,15 +31,32 @@ or Include jQuery from a CDN, before adding the jsformvalidator.js
 ```
 To use on a form you want to validate: 
 Attach the class "validate-this-form" to your form.
-If you require a field add the attribute ``` vrequired="on" ``` to the field tag.
-To validate for email,number and url, add the attribute 
+If you require a field add the attribute ``` vrequired="on" ``` to the field tag like this:
 
-``` vtype="emailonly"
-vtype="numberonly"
-vtype="urlonly"
+```
+<input type="text" name="username" vrequired="on">
+```
+
+You can validate for email,number and url using ```vtype="numberonly", vtype="emailonly" and vtype = "urlonly"```
+To validate for email,number and url, add the attribute to the field tag like this.  
+
+``` 
+<input type="text" name="phonenumber" vtype="numberonly"> 
+<input type="text" name="email" vtype="emailonly" > 
+<input type="text" name="website" vtype="urlonly" > 
 
 ```
 A sample form to be validated is:
+
+```
+<form action="#" class="validate-this-form" method="post">
+<input type="text" name="uniquecode" vtype="numberonly" vrequired="on">
+<input type="text" name="phone"  vtype="numberonly" vrequired="on"> 
+<input type="text" name="email"  vtype="emailonly"> 
+<input type="text" name="website" vtype="urlonly"> 
+<input type="submit" name="submit" >
+</form>
+```
 
 
 
