@@ -121,11 +121,17 @@ $(document).ready(function(){
 
 			if(req && req == "on"){
 			var v = validateRequired($(this));
+
+
 			if(v._error)
 			{
 				currentform.find(className).html(v._error);
+				e.preventDefault();
 				errorObj.push(_error);
 			}
+			else
+				currentform.find(className).html("");
+
 			}
 			else{
 
@@ -147,7 +153,7 @@ $(document).ready(function(){
 
 			}
 
-		});
+		}
 	});
 	
 		console.log(errorObj)
