@@ -4,6 +4,8 @@ var stringOnlyError = "Must be letters only";
 var emailOnlyError = "Please enter a valid email";
 var urlOnlyError = "Please enter a valid URL";
 var requiredError = "This field is required";
+ 
+ 
 
 	function validateNumberOnly(field)
 		{
@@ -28,9 +30,13 @@ var requiredError = "This field is required";
 
 	function validateEmailOnly(field)
 		{
-			var value = field.val();
-		
 
+		var emailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/; 
+		var value = field.val();
+		if(value.match(emailformat))
+		 	return true;
+		 else
+		 	return false;		
 		}
 
 	function validateUrlOnly(field)
