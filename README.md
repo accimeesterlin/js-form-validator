@@ -1,5 +1,5 @@
 # js-form-validator
-This is a Javascript client side validation script that you can use to validate your forms.
+This is a JavaScript client side validation script that you can use to validate your forms.
 If you absolutely hate having to validate forms on client side over and over, this script is for you!
 
 Pros: 
