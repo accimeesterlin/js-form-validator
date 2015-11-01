@@ -100,26 +100,46 @@ var requiredError = "This field is required";
 $(document).ready(function(){
 
 	$('.validate-this-form').each(function(){
+		$(this).submit(function(e){
+
 		var validationtype = $(this).attr('vtype');
+		var errorObj = [];
+
 		$(this).find('input').each(function(){	
 			var nameField = $(this).attr('name');	
 			var v = myValidator($(this));
+			var currentform = $(this).parents('form:first');
+			var className = '.validate-error-'+nameField;
 			if(v.error && (v.error != ""))
 			{
 				var error = v.error;
 			
-			var currentform = $(this).parents('form:first');
-			var className = '.validate-error-'+nameField;
 			console.log("====",className);
 			currentform.find(className).html(error);
-			//n.html(error);
-			//console.log("Has ERROR:",n)
-		}
+
+			errorObj.push(error);
+		
+			}
+			else
+			{
+				currentform.find(className).html("");
+
+			}
 
 		});
+		console.log(errorObj)
+
+		if(errorObj.length > 0)
+		{
+			e.preventDefault();
+			
+		}
+
+		return;
+
 		
 	});
 	
 });
 
-
+});
