@@ -2,7 +2,7 @@
 This is a Javascript client side validation script that you can use to validate your forms.
 If you absolutely hate having to validate forms on client side over and over, this script is for you!
 
-Pros: Easy to use and customize error messages for.
+Pros: Easy to use and customize error messages for. <br/>
 Cons: You're welcome to help me find them  :)
 
 Dependencies
@@ -29,14 +29,17 @@ or Include jQuery from a CDN, before adding the jsformvalidator.js
 <script src="jsformvalidator.js"></script>
 
 ```
-To use on a form you want to validate.
+To use on a form you want to validate: 
 Attach the class "validate-this-form" to your form.
 If you require a field add the attribute ``` vrequired="on" ``` to the field tag.
 To validate for email,number and url, add the attribute 
-```vtype="emailonly"
+
+``` vtype="emailonly"
 vtype="numberonly"
 vtype="urlonly"
+
 ```
+A sample form to be validated is:
 
 
 
