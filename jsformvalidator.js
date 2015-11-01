@@ -53,11 +53,15 @@ var requiredError = "This field is required";
 
 	function validateRequired(field)
 		{
+			var v = {}
 			var value = field.val();
-			if(!value)
-				return false;
-			else
+			if(value)
 				return true;
+			else
+			{
+				v._error = requiredError;
+				return v;
+			}
 			
 
 		}
@@ -106,15 +110,29 @@ $(document).ready(function(){
 		var errorObj = [];
 
 		$(this).find('input').each(function(){	
-			var nameField = $(this).attr('name');	
-			var v = myValidator($(this));
+			var nameField = $(this).attr('name');
+
+			//check if field is required
+			var req = $(this).attr('vrequired');
+
 			var currentform = $(this).parents('form:first');
 			var className = '.validate-error-'+nameField;
+
+			if(req && req == "on")
+			var v = validateRequired($(this));
+			if(v._error)
+			{
+				currentform.find(className).html(v._error);
+				errorObj.push(_error);
+			}
+			else{
+
+			var v = myValidator($(this));
 			if(v.error && (v.error != ""))
 			{
-				var error = v.error;
 			
-			console.log("====",className);
+			var error = v.error;
+
 			currentform.find(className).html(error);
 
 			errorObj.push(error);
@@ -127,6 +145,8 @@ $(document).ready(function(){
 			}
 
 		});
+
+	}
 		console.log(errorObj)
 
 		if(errorObj.length > 0)
