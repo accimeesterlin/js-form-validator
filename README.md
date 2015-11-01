@@ -2,14 +2,15 @@
 This is a Javascript client side validation script that you can use to validate your forms.
 If you absolutely hate having to validate forms on client side over and over, this script is for you!
 
-Pros: Easy to use and customize error messages for. <br/>
+Pros: 
+-Easy to use <br/>
+- Customize error messages easily.<br/>
+-You can use this on multiple forms on the same Page!
 Cons: You're welcome to help me find them  :)
 
 Dependencies
 ============
 jQuery Library
-
-
 
 How to use
 ==========
